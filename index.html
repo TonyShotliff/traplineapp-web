@@ -168,13 +168,13 @@
 
   function tilesRow(options, selected, onclickName) {
     return '<div style="display:flex;flex-wrap:wrap;gap:6px;">' +
-      options.map(function (opt) { return tile(opt, opt === selected, onclickName + "('" + opt.replace(/'/g, "\\'") + "')"); }).join('') +
+      options.map(function (opt) { return tile(opt, opt === selected, onclickName + "'" + opt.replace(/'/g, "\\'") + "')"); }).join('') +
       '</div>';
   }
 
   function toggleTilesRow(options, selectedArr, onclickName) {
     return '<div style="display:flex;flex-wrap:wrap;gap:6px;">' +
-      options.map(function (opt) { return tile(opt, selectedArr.indexOf(opt) !== -1, onclickName + "('" + opt.replace(/'/g, "\\'") + "')"); }).join('') +
+      options.map(function (opt) { return tile(opt, selectedArr.indexOf(opt) !== -1, onclickName + "'" + opt.replace(/'/g, "\\'") + "')"); }).join('') +
       '</div>';
   }
 
