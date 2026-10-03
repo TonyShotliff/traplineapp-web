@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trapline — Log sets and catches in seconds</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "SF Pro Text", "Segoe UI", system-ui, sans-serif; background: #0a0a0a; }
+  a { color: #d9662f; text-decoration: none; }
+  a:hover { color: #e07b3f; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  #phoneContent::-webkit-scrollbar { width: 0; height: 0; }
+  @media (max-width: 760px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 34px !important; }
+  }
+</style>
+</head>
+<body>
+
+<div style="width: 100%; min-height: 100vh; background: #0a0a0a;">
+
+  <!-- Nav -->
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; padding-top: 24px; padding-bottom: 24px;">
+    <span style="font-size: 19px; font-weight: 800; color: #f5f0e8; letter-spacing: 0.6px;">TRAPLINE</span>
+    <a href="#demo" style="background: #d9662f; color: #1a0d05; font-weight: 800; font-size: 13.5px; padding: 11px 20px; border-radius: 999px;">Try the Interactive Demo</a>
+  </div>
+
+  <!-- Hero -->
+  <div class="container" style="padding: 36px 24px 48px 24px; text-align: center;">
+    <h1 class="hero-title" style="margin: 0 0 18px 0; font-size: 48px; line-height: 1.1; font-weight: 800; color: #f5f0e8; letter-spacing: -0.5px;">Stop guessing what worked.</h1>
+    <p style="margin: 0 auto 32px auto; max-width: 560px; font-size: 18px; line-height: 1.6; color: #a8a29a;">Log sets and catches in seconds — gloves on, no signal needed — then see exactly which bait, lure, and price actually paid off this season.</p>
+    <div style="font-size: 12px; font-weight: 800; color: #d9662f; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 14px;">Free Download</div>
+    <div class="btn-row">
+      <span style="background: #d9662f; color: #1a0d05; font-weight: 800; font-size: 15px; padding: 17px 26px; border-radius: 14px; display: inline-block;">Download on the App Store</span>
+      <span style="background: #1a1a1a; color: #f5f0e8; font-weight: 800; font-size: 15px; padding: 17px 26px; border-radius: 14px; border: 1px solid #2c2c2c; display: inline-block;">Get it on Google Play</span>
+    </div>
+    <div style="margin-top: 16px;">
+      <a href="#demo" style="font-size: 14px; font-weight: 700; color: #d9662f;">or try the interactive demo below ↓</a>
+    </div>
+  </div>
+
+  <!-- Why Trapline -->
+  <div class="container" style="padding: 8px 24px 72px 24px;">
+    <div style="text-align: center; margin-bottom: 28px;">
+      <div style="font-size: 12px; font-weight: 700; color: #d9662f; letter-spacing: 1.1px; text-transform: uppercase;">Why Trapline</div>
+      <h2 style="margin: 6px 0 10px 0; font-size: 26px; font-weight: 800; color: #f5f0e8;">Built for the real trapline, not the backyard</h2>
+      <p style="margin: 0 auto; max-width: 560px; font-size: 15px; color: #a8a29a; line-height: 1.55;">Most trapping apps try to manage you — a required target species, a check-status to fill in every single day. Trapline isn't a constant. It's a diary.</p>
+    </div>
+    <div class="feature-grid">
+      <div style="background: #1a1a1a; border: 1px solid #2c2c2c; border-radius: 16px; padding: 24px;">
+        <div style="font-size: 17px; font-weight: 800; color: #f5f0e8; margin-bottom: 8px;">No overhandling, ever</div>
+        <div style="font-size: 14px; color: #a8a29a; line-height: 1.55;">Other apps force a target species per set and make you mark every trap checked or missed. Trapline just records what actually happened — nothing is ever required, not even on check day.</div>
+      </div>
+      <div style="background: #1a1a1a; border: 1px solid #2c2c2c; border-radius: 16px; padding: 24px;">
+        <div style="font-size: 17px; font-weight: 800; color: #f5f0e8; margin-bottom: 8px;">Your own inventory, not a generic list</div>
+        <div style="font-size: 14px; color: #a8a29a; line-height: 1.55;">Build your own bait, lure, urine, and trap type lists as you actually use them — not a locked dropdown built for every trapper's specialty but yours. Load it all in before the season starts, or just add new gear on the fly right at the set the first time you use it — either way works.</div>
+      </div>
+      <div style="background: #1a1a1a; border: 1px solid #2c2c2c; border-radius: 16px; padding: 24px;">
+        <div style="font-size: 17px; font-weight: 800; color: #f5f0e8; margin-bottom: 8px;">Quick-tap pickers, built for gloves</div>
+        <div style="font-size: 14px; color: #a8a29a; line-height: 1.55;">Your most-used gear sorts to the front automatically. No typing, no dropdown menus to fight with — just tap and go, even with cold, wet hands.</div>
+      </div>
+      <div style="background: #1a1a1a; border: 1px solid #2c2c2c; border-radius: 16px; padding: 24px;">
+        <div style="font-size: 17px; font-weight: 800; color: #f5f0e8; margin-bottom: 8px;">Real season analytics</div>
+        <div style="font-size: 14px; color: #a8a29a; line-height: 1.55;">The Reports tab turns a season of logging into answers — which bait/lure/urine combos actually produced, your catch rate, and a full breakdown by set.</div>
+      </div>
+      <div style="background: #1a1a1a; border: 1px solid #2c2c2c; border-radius: 16px; padding: 24px;">
+        <div style="font-size: 17px; font-weight: 800; color: #f5f0e8; margin-bottom: 8px;">FHA price comparison — nobody else has this</div>
+        <div style="font-size: 14px; color: #a8a29a; line-height: 1.55;">Log what you actually sold each species for and see it stacked against real Fur Harvesters Auction reference pricing. No other trapping app tracks this at all.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive demo -->
+  <div class="container" id="demo" style="padding: 24px 24px 72px 24px;">
+    <div style="text-align: center; margin-bottom: 32px;">
+      <div style="font-size: 12px; font-weight: 700; color: #d9662f; letter-spacing: 1.1px; text-transform: uppercase;">Try It Yourself</div>
+      <h2 style="margin: 6px 0 10px 0; font-size: 28px; font-weight: 800; color: #f5f0e8;">Create a set. Log a catch. Log a sale.</h2>
+      <p style="margin: 0 auto; max-width: 460px; font-size: 15px; color: #a8a29a; line-height: 1.5;">This isn't a slideshow — it's actually wired up. Create a set, start a new trap line, log a catch with the real gear pickers, then log what it sold for.</p>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+      <!-- Phone frame -->
+      <div style="width: 320px; height: 693px; background: #000; border-radius: 40px; padding: 10px; box-sizing: border-box; box-shadow: 0 30px 60px rgba(0,0,0,0.35); flex-shrink: 0;">
+        <div style="width: 100%; height: 100%; background: #0d0d0d; border-radius: 30px; overflow: hidden; position: relative; display: flex; flex-direction: column;">
+          <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 20px; background: #000; border-radius: 0 0 12px 12px; z-index: 20;"></div>
+          <div style="height: 34px; flex-shrink: 0;"></div>
+          <div id="phoneContent" style="flex: 1; overflow-y: auto; min-height: 0;"></div>
+          <div id="bottomNav" style="flex-shrink: 0; height: 58px; background: #1a1a1a; border-top: 1px solid #2c2c2c; display: flex; align-items: center; justify-content: space-around; padding-top: 6px; padding-bottom: 8px;"></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 16px;"><span style="font-size: 12px; color: #6f6b64;">Sample data, reset on refresh — the real app saves everything to your phone.</span></div>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top: 1px solid #2c2c2c; padding: 28px 24px; text-align: center;">
+    <div style="font-size: 12.5px; color: #6f6b64;">© 2026 Trapline App</div>
+    <div style="margin-top: 10px; display: flex; gap: 18px; justify-content: center; font-size: 12.5px;">
+      <a href="/trapline-privacy-policy.html">Privacy Policy</a>
+      <a href="/trapline-terms-of-service.html">Terms of Service</a>
+      <a href="/trapline-support.html">Support</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var ACCENT = '#d9662f', ACCENT_STRONG = '#e07b3f', DANGER = '#c94f4f';
+  var CARD = '#1a1a1a', SURFACE_RAISED = '#1e1e1e', LINE = '#2c2c2c', LINE_STRONG = '#3a3a3a';
+  var INK = '#f5f0e8', INK_DIM = '#a8a29a', INK_FAINT = '#6f6b64';
+
+  var SET_TYPES = ['Dirt Hole', 'Flat', 'Castor Mound', 'Pocket'];
+  var TRAP_TYPES = ['2 coil duke', 'Duke 550', '330 Duke', '#1 Viktor'];
+  var BAITS = ['Mouse meat', 'Beaver Meat', 'Fish'];
+  var LURES = ['Bobcat Gland', 'Coyote Gland', 'Fresh Castor', 'Mink Gland'];
+  var URINES = ['Bobcat', 'Coyote'];
+  var SPECIES = ['Coyote', 'Mink', 'Bobcat', 'Coon', 'Fox', 'Beaver'];
+  var FHA = { Coyote: 6.00, Mink: 22.00, Bobcat: 48.00, Coon: 20.00, Fox: 25.00, Beaver: 18.00 };
+  var DATE_CHOICES = ['today, auto-filled', 'yesterday', '2 days ago', '3 days ago'];
+  var SALE_DATE_CHOICES = ['today', 'yesterday', '2 days ago', '3 days ago'];
+  var LINE_NAME_CHOICES = ['Northwoods Line', 'River Bottom', 'Back 40', 'Cedar Ridge'];
+
+  var state = {
+    view: 'sets',
+    sets: [
+      { id: 's1', name: 'South Field', setType: 'Dirt Hole', trapType: '2 coil duke', bait: 'Mouse meat', lures: [], urine: null, catches: [], pulled: false, createdLabel: 'Sep 7, 2025' },
+      { id: 's2', name: 'West Creek', setType: 'Pocket', trapType: '#1 Viktor', bait: 'Beaver Meat', lures: ['Fresh Castor'], urine: 'Bobcat', catches: [{ species: 'Mink', sex: 'male' }], pulled: false, createdLabel: 'Sep 11, 2025' },
+      { id: 's3', name: 'Top Of Bluff', setType: 'Dirt Hole', trapType: '2 coil duke', bait: 'Fish', lures: ['Coyote Gland'], urine: 'Coyote', catches: [{ species: 'Coyote', sex: null }, { species: 'Coon', sex: 'female' }], pulled: false, createdLabel: 'Sep 14, 2025' }
+    ],
+    nextSetNum: 6,
+    newSetDraft: { setType: null, trapType: null, bait: null, lures: [], urine: null },
+    activeSetId: null,
+    catchSpecies: null,
+    catchSex: null,
+    catchPhoto: false,
+    refreshOpen: false,
+    dateIndex: 0,
+    salesLog: [],
+    saleSpecies: null,
+    priceDraft: '',
+    countDraft: '',
+    saleDateIndex: 0,
+    loggedThisVisit: [],
+    trapLines: [{ id: 'l1', name: 'Farmers Line' }],
+    activeLineId: 'l1',
+    lineAdding: false
+  };
+
+  function esc(v) {
+    return String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function tileStyle(active) {
+    if (active) return 'padding:9px 12px;border-radius:8px;background:rgba(217,102,47,0.16);border:1px solid ' + ACCENT + ';font-size:12.5px;font-weight:700;color:' + ACCENT_STRONG + ';cursor:pointer;';
+    return 'padding:9px 12px;border-radius:8px;background:#1a1a1a;border:1px solid #2c2c2c;font-size:12.5px;font-weight:500;color:' + INK + ';cursor:pointer;';
+  }
+
+  function tile(label, active, onclick) {
+    return '<div style="' + tileStyle(active) + '" onclick="' + onclick + '">' + esc(label) + '</div>';
+  }
+
+  function tilesRow(options, selected, onclickName) {
+    return '<div style="display:flex;flex-wrap:wrap;gap:6px;">' +
+      options.map(function (opt) { return tile(opt, opt === selected, onclickName + "('" + opt.replace(/'/g, "\\'") + "')"); }).join('') +
+      '</div>';
+  }
+
+  function toggleTilesRow(options, selectedArr, onclickName) {
+    return '<div style="display:flex;flex-wrap:wrap;gap:6px;">' +
+      options.map(function (opt) { return tile(opt, selectedArr.indexOf(opt) !== -1, onclickName + "('" + opt.replace(/'/g, "\\'") + "')"); }).join('') +
+      '</div>';
+  }
+
+  function activeSet() {
+    return state.sets.find(function (st) { return st.id === state.activeSetId; }) || state.sets[0];
+  }
+  function patchActiveSet(patch) {
+    var as = activeSet();
+    state.sets = state.sets.map(function (st) { return st.id === as.id ? Object.assign({}, st, patch) : st; });
+  }
+  function activeLine() {
+    return state.trapLines.find(function (l) { return l.id === state.activeLineId; });
+  }
+  function caughtSpecies() {
+    var seen = {};
+    state.sets.forEach(function (st) { st.catches.forEach(function (c) { if (c.species) seen[c.species] = true; }); });
+    return SPECIES.filter(function (sp) { return seen[sp]; });
+  }
+
+  // ---------- Screens ----------
+
+  function screenSets() {
+    var totalCatches = state.sets.reduce(function (n, st) { return n + st.catches.length; }, 0);
+    var setCount = state.sets.length;
+    var rate = setCount ? totalCatches / setCount : 0;
+    var rateLabel = rate.toFixed(2).replace(/^0/, '');
+    var line = activeLine();
+    var lineName = line ? line.name.toUpperCase() : 'NO LINE';
+
+    var rows = state.sets.map(function (st) {
+      var subtitle = [st.setType, st.trapType].filter(Boolean).join(' · ') || 'No detail logged';
+      var n = st.catches.length;
+      return '<div onclick="selectSet(\'' + st.id + '\')" style="background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:12px;padding:11px 13px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;">' +
+        '<div><div style="font-size:13.5px;font-weight:800;color:' + INK + ';">' + esc(st.name) + '</div><div style="font-size:10.5px;color:' + INK_DIM + ';margin-top:2px;">' + esc(subtitle) + '</div></div>' +
+        '<div style="text-align:right;"><div style="font-size:9px;font-weight:800;color:' + ACCENT + ';letter-spacing:0.5px;">' + (st.pulled ? 'PULLED' : 'SET') + '</div><div style="font-size:9px;color:' + ACCENT_STRONG + ';font-weight:700;margin-top:2px;">' + n + (n === 1 ? ' catch' : ' catches') + '</div></div>' +
+        '</div>';
+    }).join('');
+
+    return '<div style="padding:10px 16px 6px 16px;"><div style="font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:1px;text-transform:uppercase;">' + esc(lineName) + ' · 2025 Season · Day 1</div><div style="font-size:22px;font-weight:800;color:' + INK + ';margin-top:2px;">This Season</div></div>' +
+      '<div style="padding:10px 16px 0 16px;display:flex;gap:8px;">' +
+      statTile(totalCatches, 'CATCHES') + statTile(setCount, 'SETS ACTIVE') + statTile(rateLabel, 'CATCH RATE') +
+      '</div>' +
+      '<div style="padding:14px 16px 0 16px;font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:0.7px;text-transform:uppercase;">All Sets</div>' +
+      '<div style="padding:8px 16px 14px 16px;display:flex;flex-direction:column;gap:8px;">' + rows + '</div>' +
+      '<div style="padding:0 16px 90px 16px;"><div onclick="goNewSet()" style="width:100%;background:' + ACCENT + ';color:#1a0d05;border-radius:14px;padding:14px 0;font-size:14.5px;font-weight:800;text-align:center;box-sizing:border-box;cursor:pointer;">+ Create Set</div></div>';
+  }
+
+  function statTile(value, label) {
+    return '<div style="flex:1;background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:10px;padding:10px 6px;text-align:center;"><div style="font-size:18px;font-weight:800;color:' + INK + ';">' + esc(value) + '</div><div style="font-size:8.5px;font-weight:700;color:' + INK_DIM + ';letter-spacing:0.4px;margin-top:2px;">' + label + '</div></div>';
+  }
+
+  function screenNewSet() {
+    var d = state.newSetDraft;
+    return backHeader('goSets()', 'New Set', 'Set ' + state.nextSetNum) +
+      field('Set Type', tilesRow(SET_TYPES, d.setType, 'pickDraft("setType",')) +
+      field('Trap Type', tilesRow(TRAP_TYPES, d.trapType, 'pickDraft("trapType",')) +
+      field('Bait', tilesRow(BAITS, d.bait, 'pickDraft("bait",')) +
+      field('Lure — tap all that apply', toggleTilesRow(LURES, d.lures, 'toggleDraftLure(')) +
+      field('Urine', tilesRow(URINES, d.urine, 'pickDraft("urine",')) +
+      '<div style="padding:12px 16px 0 16px;font-size:9.5px;color:' + INK_FAINT + ';line-height:13px;">Notice nothing here is required — tap Create Set any time, with as little or as much filled in as you want.</div>' +
+      '<div style="padding:14px 16px 90px 16px;"><div onclick="createSet()" style="width:100%;background:' + ACCENT + ';color:#1a0d05;border-radius:14px;padding:14px 0;font-size:14.5px;font-weight:800;text-align:center;box-sizing:border-box;cursor:pointer;">Create Set</div></div>';
+  }
+
+  function backHeader(backFn, eyebrow, title) {
+    return '<div style="padding:10px 16px 6px 16px;display:flex;align-items:flex-start;gap:6px;"><div onclick="' + backFn + '" style="width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-left:-6px;"><span style="color:' + INK + ';font-size:22px;font-weight:600;margin-top:-2px;">‹</span></div><div><div style="font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:1px;text-transform:uppercase;">' + esc(eyebrow) + '</div><div style="font-size:20px;font-weight:800;color:' + INK + ';margin-top:2px;">' + esc(title) + '</div></div></div>';
+  }
+
+  function field(label, body, topPad) {
+    return '<div style="padding:' + (topPad || '10px') + ' 16px 0 16px;"><div style="font-size:10px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px;">' + label + '</div>' + body + '</div>';
+  }
+
+  function screenSetDetail() {
+    var as = activeSet();
+    if (!as) return '';
+    var eyebrow = [as.id.toUpperCase().slice(0, 5), as.setType, as.trapType].filter(Boolean).join(' · ');
+    var meta = 'Created ' + as.createdLabel + ' · catch rate ' + as.catches.length.toFixed(2) + '/day';
+    var catchesHtml = as.catches.length
+      ? as.catches.map(function (c) {
+          var sex = c.sex === 'male' ? 'Male ' : c.sex === 'female' ? 'Female ' : '';
+          return '<div style="background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:10px;padding:9px 12px;"><span style="font-size:12.5px;font-weight:700;color:' + INK + ';">' + esc(sex + (c.species || 'No species recorded')) + '</span></div>';
+        }).join('')
+      : '<div style="font-size:11.5px;color:' + INK_FAINT + ';text-align:center;padding:6px 0;">No catches logged on this set yet.</div>';
+
+    return backHeader('goSets()', eyebrow, as.name) +
+      '<div style="margin:8px 16px 0 16px;background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:12px;padding:12px 13px;"><div style="font-size:12.5px;color:' + INK_DIM + ';">📍 Location Pending — will fill in automatically</div><div style="font-size:11px;color:' + INK_FAINT + ';margin-top:6px;">' + esc(meta) + '</div>' +
+      (as.pulled ? '<div style="font-size:9.5px;font-weight:800;color:' + INK_FAINT + ';letter-spacing:0.6px;margin-top:6px;">PULLED</div>' : '') + '</div>' +
+      field('Set Type — Most-Used First', tilesRow(SET_TYPES, as.setType, 'pickDetail("setType",'), '14px') +
+      field('Trap Type — Most-Used First', tilesRow(TRAP_TYPES, as.trapType, 'pickDetail("trapType",')) +
+      field('Bait — Most-Used First', tilesRow(BAITS, as.bait, 'pickDetail("bait",')) +
+      field('Lure — Most-Used First', toggleTilesRow(LURES, as.lures, 'toggleDetailLure(')) +
+      field('Urine — Most-Used First', tilesRow(URINES, as.urine, 'pickDetail("urine",')) +
+      '<div style="padding:14px 16px 0 16px;font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:0.5px;text-transform:uppercase;">Catches</div>' +
+      '<div style="padding:8px 16px 0 16px;display:flex;flex-direction:column;gap:6px;">' + catchesHtml + '</div>' +
+      '<div style="padding:16px 16px 90px 16px;display:flex;gap:10px;">' +
+      '<div onclick="togglePull()" style="flex:1;background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:14px;padding:14px 0;text-align:center;cursor:pointer;"><span style="font-size:13px;font-weight:700;color:' + INK_DIM + ';">' + (as.pulled ? 'Un-pull Set' : 'Pull Set') + '</span></div>' +
+      '<div onclick="goLogCatchFromDetail()" style="flex:1.3;background:' + ACCENT + ';color:#1a0d05;border-radius:14px;padding:14px 0;font-size:14px;font-weight:800;text-align:center;cursor:pointer;">Log Catch</div>' +
+      '</div>';
+  }
+
+  function screenLogCatch() {
+    var as = activeSet();
+    var gear = as ? [as.name, as.setType, as.trapType].filter(Boolean).join(' · ') : '';
+    var photoStyle = state.catchPhoto
+      ? 'border:1px solid ' + ACCENT + ';background:rgba(217,102,47,0.16);border-radius:12px;padding:14px;text-align:center;font-size:12px;font-weight:700;color:' + ACCENT_STRONG + ';cursor:pointer;'
+      : 'border:1.5px dashed ' + LINE_STRONG + ';border-radius:12px;padding:18px;text-align:center;font-size:11px;font-weight:700;color:' + INK_DIM + ';letter-spacing:0.4px;cursor:pointer;';
+    var photoLabel = state.catchPhoto ? '📷 Photo added — tap to remove' : '📷 ADD PHOTO (OPTIONAL)';
+    var refreshHtml = '';
+    if (state.refreshOpen && as) {
+      refreshHtml = '<div style="padding:6px 16px 0 16px;font-size:10.5px;color:' + INK_FAINT + ';line-height:15px;">Changes apply going forward only — this catch keeps what was actually used.</div>' +
+        field('Bait', tilesRow(BAITS, as.bait, 'pickDetail("bait",')) +
+        field('Lure', toggleTilesRow(LURES, as.lures, 'toggleDetailLure(')) +
+        field('Urine', tilesRow(URINES, as.urine, 'pickDetail("urine",')) +
+        field('Trap Type', tilesRow(TRAP_TYPES, as.trapType, 'pickDetail("trapType",'));
+    }
+    return backHeader('goSetDetail()', gear, 'Log Catch') +
+      field('Species — Most-Caught First', '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;">' + SPECIES.map(function (sp) { return tile(sp, sp === state.catchSpecies, 'pickCatchSpecies("' + sp + '")'); }).join('') + '</div>') +
+      field('Sex', '<div style="display:flex;gap:6px;">' + ['Male', 'Female'].map(function (v) { return tile(v, v === state.catchSex, 'pickCatchSex("' + v + '")'); }).join('') + '</div>') +
+      '<div style="padding:12px 16px 0 16px;"><div onclick="togglePhoto()" style="' + photoStyle + '">' + photoLabel + '</div></div>' +
+      field('Notes', '<div style="margin-top:8px;background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:10px;padding:12px;min-height:40px;"><span style="font-size:12px;color:' + INK_FAINT + ';font-style:italic;">Anything worth remembering?</span></div>') +
+      '<div onclick="toggleRefresh()" style="padding:14px 16px 0 16px;font-size:13px;font-weight:700;color:' + INK_DIM + ';cursor:pointer;">' + (state.refreshOpen ? '− ' : '+ ') + 'Refresh bait / lure / urine?</div>' +
+      refreshHtml +
+      '<div style="padding:14px 16px 0 16px;display:flex;align-items:center;justify-content:space-between;"><span style="font-size:12px;color:' + INK_DIM + ';">Date: ' + DATE_CHOICES[state.dateIndex] + '</span><span onclick="cycleDate()" style="font-size:12px;font-weight:700;color:' + ACCENT + ';cursor:pointer;">Change</span></div>' +
+      '<div style="padding:14px 16px 90px 16px;"><div onclick="saveCatch()" style="width:100%;background:' + SURFACE_RAISED + ';color:' + INK_DIM + ';border:1px solid ' + LINE + ';border-radius:14px;padding:14px 0;font-size:14.5px;font-weight:800;text-align:center;box-sizing:border-box;cursor:pointer;text-transform:uppercase;">Save</div></div>';
+  }
+
+  function screenLine() {
+    var setCount = state.sets.length;
+    var rows = state.trapLines.map(function (l) {
+      var active = l.id === state.activeLineId;
+      var n = active ? setCount : 0;
+      return '<div onclick="selectLine(\'' + l.id + '\')" style="display:flex;align-items:center;justify-content:space-between;background:' + (active ? 'rgba(217,102,47,0.16)' : CARD) + ';border:1px solid ' + (active ? ACCENT : LINE) + ';border-radius:14px;padding:14px;cursor:pointer;">' +
+        '<div style="flex:1;"><div style="font-size:14.5px;font-weight:700;color:' + INK + ';">' + esc(l.name) + '</div><div style="font-size:10.5px;color:' + INK_DIM + ';margin-top:2px;">' + n + (n === 1 ? ' set' : ' sets') + '</div></div>' +
+        (active ? '<span style="font-size:9px;font-weight:800;color:' + ACCENT + ';letter-spacing:0.5px;">ACTIVE</span>' : '') + '</div>';
+    }).join('');
+
+    var bottom;
+    if (state.lineAdding) {
+      var choices = LINE_NAME_CHOICES.filter(function (n) { return !state.trapLines.some(function (l) { return l.name === n; }); });
+      bottom = '<div style="padding:16px 16px 0 16px;font-size:10px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.5px;text-transform:uppercase;">Name Your Line</div>' +
+        '<div style="padding:8px 16px 0 16px;display:flex;flex-wrap:wrap;gap:6px;">' + choices.map(function (name) { return tile(name, false, 'createLine("' + name + '")'); }).join('') + '</div>' +
+        '<div style="padding:10px 16px 90px 16px;text-align:center;"><span onclick="cancelNewLine()" style="font-size:12px;color:' + INK_FAINT + ';cursor:pointer;">Cancel</span></div>';
+    } else {
+      bottom = '<div style="padding:16px 16px 90px 16px;"><div onclick="startNewLine()" style="border:1.5px dashed ' + LINE_STRONG + ';border-radius:12px;padding:14px;text-align:center;cursor:pointer;"><span style="font-size:13.5px;font-weight:700;color:' + INK_DIM + ';">+ New Trap Line</span></div></div>';
+    }
+
+    return '<div style="padding:10px 16px 6px 16px;"><div style="font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:1px;text-transform:uppercase;">Trap Lines</div><div style="font-size:22px;font-weight:800;color:' + INK + ';margin-top:2px;">Switch Line</div></div>' +
+      '<div style="padding:12px 16px 0 16px;display:flex;flex-direction:column;gap:8px;">' + rows + '</div>' + bottom;
+  }
+
+  function screenReports() {
+    var totalCatches = state.sets.reduce(function (n, st) { return n + st.catches.length; }, 0);
+    var setCount = state.sets.length;
+    var rate = setCount ? totalCatches / setCount : 0;
+    var rateLabel = rate.toFixed(2).replace(/^0/, '');
+    var line = activeLine();
+    var lineName = line ? line.name.toUpperCase() : 'NO LINE';
+
+    var rows = state.sets.map(function (st, i) {
+      var gearParts = st.lures && st.lures.length ? [st.bait].concat(st.lures) : [st.bait];
+      var gear = gearParts.filter(Boolean).length ? gearParts.filter(Boolean).join(' / ') : 'No gear logged';
+      var n = st.catches.length;
+      return '<div style="background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:12px;overflow:hidden;">' +
+        '<div style="background:' + SURFACE_RAISED + ';padding:9px 12px;border-bottom:1px solid ' + LINE + ';display:flex;justify-content:space-between;"><span style="font-size:12.5px;font-weight:800;color:' + INK + ';">' + esc(st.name) + '</span><span style="font-size:9.5px;color:' + INK_FAINT + ';">Created Sep ' + (3 + i * 4) + '</span></div>' +
+        '<div style="padding:10px 12px;"><div style="font-size:11px;color:' + ACCENT_STRONG + ';font-weight:700;">' + esc(gear) + '</div><div style="font-size:10px;color:' + INK_DIM + ';margin-top:2px;">Total: ' + n + (n === 1 ? ' catch' : ' catches') + '</div></div></div>';
+    }).join('');
+
+    return '<div style="padding:10px 16px 6px 16px;"><div style="font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:1px;text-transform:uppercase;">' + esc(lineName) + ' · 2025</div><div style="font-size:22px;font-weight:800;color:' + INK + ';margin-top:2px;">Reports</div></div>' +
+      '<div style="padding:6px 16px 0 16px;display:flex;gap:6px;"><div style="padding:7px 11px;border-radius:999px;background:' + ACCENT + ';"><span style="font-size:11px;font-weight:700;color:#1a0d05;">This Season</span></div><div style="padding:7px 11px;border-radius:999px;background:' + CARD + ';border:1px solid ' + LINE + ';"><span style="font-size:11px;font-weight:700;color:' + INK_FAINT + ';">Compare Seasons</span></div></div>' +
+      '<div style="padding:8px 16px 0 16px;font-size:9.5px;color:' + INK_FAINT + ';line-height:13.5px;">Your active trap line\'s season totals, top combos, and every set logged so far.</div>' +
+      '<div style="padding:12px 16px 0 16px;display:flex;gap:6px;">' +
+      '<div style="flex:1;background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:8px;padding:8px 4px;text-align:center;"><div style="font-size:15px;font-weight:800;color:' + INK + ';">' + totalCatches + '</div><div style="font-size:7.5px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.3px;">CATCHES</div></div>' +
+      '<div style="flex:1;background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:8px;padding:8px 4px;text-align:center;"><div style="font-size:15px;font-weight:800;color:' + INK + ';">' + setCount + '</div><div style="font-size:7.5px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.3px;">SETS</div></div>' +
+      '<div style="flex:1;background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:8px;padding:8px 4px;text-align:center;"><div style="font-size:15px;font-weight:800;color:' + INK + ';">' + rateLabel + '</div><div style="font-size:7.5px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.3px;">RATE / DAY</div></div>' +
+      '</div>' +
+      '<div style="padding:14px 16px 0 16px;font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:0.5px;text-transform:uppercase;">Sets</div>' +
+      '<div style="padding:8px 16px 14px 16px;display:flex;flex-direction:column;gap:8px;">' + rows + '</div>' +
+      '<div style="padding:0 16px 90px 16px;"><div onclick="goReportPreview()" style="width:100%;background:' + CARD + ';border:1px solid ' + ACCENT + ';color:' + ACCENT_STRONG + ';border-radius:12px;padding:12px 0;font-size:12.5px;font-weight:800;text-align:center;box-sizing:border-box;cursor:pointer;">Preview This Year\'s Report</div></div>';
+  }
+
+  function screenReportPreview() {
+    return backHeader('goReports()', 'Report Preview', '2025 Season Report') +
+      disclaimer('Sample data shown for demo purposes only — your real PDF uses your actual season\'s numbers.') +
+      '<div style="margin:14px 16px 0 16px;background:#ffffff;border-radius:6px;padding:18px 16px;color:#1a1a1a;">' +
+      '<div style="font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#d9662f;margin-bottom:3px;">Trapline Season Report</div>' +
+      '<div style="font-size:17px;font-weight:800;">This Season Report — 2025</div>' +
+      '<div style="font-size:10.5px;color:#666;margin-top:3px;margin-bottom:14px;">Generated ' + new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + '</div>' +
+      '<div style="border-top:3px solid #d9662f;padding-top:12px;">' +
+      '<div style="font-size:15px;font-weight:800;margin-bottom:8px;">Farmers Line</div>' +
+      pdfSectionTitle('Season Summary') +
+      '<div style="display:flex;gap:6px;margin-bottom:10px;">' + pdfStat(11, 'Catches') + pdfStat(7, 'Sets') + pdfStat('1.57', 'Rate / Day') + '</div>' +
+      '<div style="display:flex;gap:6px;margin-bottom:14px;">' + pdfBest('Best Day', 'Nov 14 — 3 catches') + pdfBest('Best Week', 'Nov 10–16 — 5') + '</div>' +
+      pdfSectionTitle('Top Bait / Lure / Urine Combos') +
+      pdfCombo('Fish / Coyote Gland / Coyote', 'TOB-1, TOB-2 · 0.57/day') +
+      pdfCombo('Beaver Meat / Fresh Castor / Bobcat', 'WC-1 · 0.33/day') +
+      pdfCombo('Mouse meat / (no lure)', 'SF-1 · 0.00/day') +
+      '<div style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#d9662f;border-bottom:1.5px solid #d9662f;padding-bottom:3px;margin:14px 0 8px;">Sets</div>' +
+      pdfSetCard('Top Of Bluff (TOB-1)', 'Created Sep 7', 'Dirt Hole / 2 coil duke / Fish / Coyote Gland', 'Coyote, Coon — 2 catches') +
+      pdfSetCard('West Creek (WC-1)', 'Created Sep 11', 'Pocket / #1 Viktor / Beaver Meat / Fresh Castor', 'Mink — 1 catch') +
+      '</div></div>' +
+      '<div style="padding:14px 16px 90px 16px;"><div style="width:100%;background:' + SURFACE_RAISED + ';color:' + INK_DIM + ';border:1px solid ' + LINE + ';border-radius:12px;padding:12px 0;font-size:12.5px;font-weight:700;text-align:center;box-sizing:border-box;">Share Report (PDF)</div></div>';
+  }
+
+  function disclaimer(text) {
+    return '<div style="margin:8px 16px 0 16px;background:rgba(217,102,47,0.16);border:1px solid ' + ACCENT + ';border-radius:10px;padding:9px 11px;"><span style="font-size:10.5px;font-weight:700;color:' + ACCENT_STRONG + ';line-height:14px;">' + text + '</span></div>';
+  }
+  function pdfSectionTitle(t) {
+    return '<div style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#d9662f;border-bottom:1.5px solid #d9662f;padding-bottom:3px;margin-bottom:8px;">' + t + '</div>';
+  }
+  function pdfStat(v, l) {
+    return '<div style="flex:1;border:1px solid #ddd;border-radius:6px;padding:8px 4px;text-align:center;"><div style="font-size:15px;font-weight:800;">' + v + '</div><div style="font-size:7px;text-transform:uppercase;color:#666;">' + l + '</div></div>';
+  }
+  function pdfBest(l, v) {
+    return '<div style="flex:1;border:1px solid #ddd;border-radius:6px;padding:8px;"><div style="font-size:7px;font-weight:700;text-transform:uppercase;color:#666;margin-bottom:2px;">' + l + '</div><div style="font-size:10.5px;font-weight:700;color:#b1541f;">' + v + '</div></div>';
+  }
+  function pdfCombo(name, meta) {
+    return '<div style="border-top:1px solid #eee;padding:7px 0;"><div style="font-size:11.5px;font-weight:700;">' + esc(name) + '</div><div style="font-size:10px;color:#666;margin-top:1px;">' + esc(meta) + '</div></div>';
+  }
+  function pdfSetCard(name, date, gear, catchLabel) {
+    return '<div style="border:1px solid #ddd;border-radius:6px;padding:12px;margin-bottom:10px;"><div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span style="font-size:13px;font-weight:800;">' + esc(name) + '</span><span style="font-size:10.5px;color:#666;">' + esc(date) + '</span></div><div style="font-size:11.5px;font-weight:700;color:#b1541f;">' + esc(gear) + '</div><div style="font-size:10.5px;color:#444;margin-top:2px;">' + esc(catchLabel) + '</div></div>';
+  }
+
+  function screenMarket() {
+    var cs = caughtSpecies();
+    var rows = cs.map(function (sp) {
+      var entries = state.salesLog.filter(function (e) { return e.species === sp; });
+      var pieces = entries.reduce(function (n, e) { return n + e.count; }, 0);
+      var dollars = entries.reduce(function (n, e) { return n + e.count * e.price; }, 0);
+      var yourAvg = pieces > 0 ? ('Your avg: $' + (dollars / pieces).toFixed(2)) : 'No sales logged yet';
+      var piecesLabel = pieces > 0 ? (pieces + (pieces === 1 ? ' piece · $' : ' pieces · $') + dollars.toFixed(2)) : '';
+      return '<div style="background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:12px;padding:11px 13px;display:flex;align-items:flex-start;justify-content:space-between;">' +
+        '<span style="font-size:13px;font-weight:700;color:' + INK + ';">' + esc(sp) + '</span>' +
+        '<div style="text-align:right;"><div style="font-size:12px;font-weight:800;color:' + ACCENT_STRONG + ';">' + yourAvg + '</div><div style="font-size:9.5px;color:' + INK_DIM + ';margin-top:1px;">' + piecesLabel + '</div><div style="font-size:9.5px;color:' + INK_FAINT + ';margin-top:1px;">FHA avg: $' + FHA[sp].toFixed(2) + '</div></div></div>';
+    }).join('');
+    var empty = cs.length === 0 ? '<div style="font-size:11.5px;color:' + INK_FAINT + ';text-align:center;padding:10px 0;">Log a catch first — species only show up here once you\'ve actually caught one.</div>' : '';
+
+    return '<div style="padding:10px 16px 6px 16px;"><div style="font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:1px;text-transform:uppercase;">Season 2025</div><div style="font-size:22px;font-weight:800;color:' + INK + ';margin-top:2px;">Fur Prices</div></div>' +
+      '<div style="padding:8px 16px 0 16px;"><div onclick="goLogSale()" style="width:100%;background:' + ACCENT + ';color:#1a0d05;border-radius:10px;padding:11px 0;font-size:12.5px;font-weight:800;text-align:center;box-sizing:border-box;cursor:pointer;">+ Log a Sale</div></div>' +
+      '<div style="padding:14px 16px 0 16px;font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:0.5px;text-transform:uppercase;">Species Prices This Season</div>' +
+      '<div style="padding:8px 16px 90px 16px;display:flex;flex-direction:column;gap:8px;">' + rows + empty + '</div>' +
+      '<div style="padding:0 16px 90px 16px;"><div onclick="goSalePreview()" style="width:100%;background:' + CARD + ';border:1px solid ' + ACCENT + ';color:' + ACCENT_STRONG + ';border-radius:12px;padding:12px 0;font-size:12.5px;font-weight:800;text-align:center;box-sizing:border-box;cursor:pointer;">Preview Fur Prices Report</div></div>';
+  }
+
+  function screenSalePreview() {
+    var cs = caughtSpecies();
+    var speciesCards = cs.map(function (sp) {
+      var entries = state.salesLog.filter(function (e) { return e.species === sp; });
+      if (!entries.length) return null;
+      var pieces = entries.reduce(function (n, e) { return n + e.count; }, 0);
+      var dollars = entries.reduce(function (n, e) { return n + e.count * e.price; }, 0);
+      var avg = dollars / pieces;
+      var fha = FHA[sp];
+      var delta = avg - fha;
+      var sign = delta >= 0 ? '+' : '−';
+      var rowsHtml = entries.map(function (e) {
+        return '<div style="display:flex;font-size:11.5px;padding:3px 0;border-bottom:1px solid #eee;"><span style="flex:1;text-align:left;">' + e.count + '</span><span style="flex:1;text-align:right;">$' + e.price.toFixed(2) + '</span><span style="flex:1;text-align:right;">$' + (e.count * e.price).toFixed(2) + '</span></div>';
+      }).join('');
+      return '<div style="border:1px solid #ddd;border-radius:6px;padding:12px;margin-bottom:10px;">' +
+        '<div style="font-size:13px;font-weight:800;letter-spacing:0.3px;margin-bottom:8px;">' + esc(sp.toUpperCase()) + '</div>' +
+        '<div style="display:flex;font-size:9px;font-weight:700;text-transform:uppercase;color:#666;border-bottom:1px solid #ddd;padding-bottom:3px;margin-bottom:4px;"><span style="flex:1;text-align:left;">Count</span><span style="flex:1;text-align:right;">Price</span><span style="flex:1;text-align:right;">Subtotal</span></div>' +
+        rowsHtml +
+        '<div style="font-size:10.5px;color:#444;margin-top:6px;">Total pieces: ' + pieces + '</div>' +
+        '<div style="font-size:11.5px;font-weight:700;margin-top:2px;">Total: $' + dollars.toFixed(2) + ' · Your avg: $' + avg.toFixed(2) + ' · FHA avg: $' + fha.toFixed(2) + ' (' + sign + '$' + Math.abs(delta).toFixed(2) + ')</div></div>';
+    }).filter(Boolean);
+
+    var totalPieces = 0, totalDollars = state.salesLog.reduce(function (n, e) { return n + e.count * e.price; }, 0);
+    speciesCards.forEach(function () {});
+    state.salesLog.forEach(function (e) { totalPieces += e.count; });
+    var blendedAvg = totalPieces ? totalDollars / totalPieces : 0;
+
+    var totalsHtml = speciesCards.length ? '<div style="background:#fdf0e6;border:2px solid #d9662f;border-radius:8px;padding:14px;margin-top:4px;"><div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#d9662f;margin-bottom:6px;">Season Totals</div><div style="font-size:10.5px;color:#444;">Total pieces: ' + totalPieces + '</div><div style="font-size:12.5px;font-weight:700;margin-top:2px;">Total: $' + totalDollars.toFixed(2) + ' · Blended avg: $' + blendedAvg.toFixed(2) + '/pelt</div></div>' : '';
+    var emptyHtml = speciesCards.length === 0 ? '<div style="font-size:11.5px;color:#999;font-style:italic;">No sales logged yet this season.</div>' : '';
+
+    return backHeader('goMarket()', 'Report Preview', 'Fur Prices Report') +
+      disclaimer('Sample layout shown for demo purposes only — your real PDF uses your actual sales.') +
+      '<div style="margin:14px 16px 90px 16px;background:#ffffff;border-radius:6px;padding:18px 16px;color:#1a1a1a;">' +
+      '<div style="font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#d9662f;margin-bottom:3px;">Trapline Fur Prices</div>' +
+      '<div style="font-size:17px;font-weight:800;">Season 2025</div>' +
+      '<div style="font-size:10.5px;color:#666;margin-top:3px;margin-bottom:14px;">Generated ' + new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + '</div>' +
+      pdfSectionTitle('Sale Log') + speciesCards.join('') + emptyHtml + totalsHtml + '</div>';
+  }
+
+  function screenLogSale() {
+    var cs = caughtSpecies();
+    var entriesHtml = '';
+    if (state.loggedThisVisit.length) {
+      var rows = state.loggedThisVisit.map(function (e) {
+        return '<div style="background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:10px;padding:9px 12px;display:flex;align-items:center;justify-content:space-between;">' +
+          '<div style="flex:1;"><div style="font-size:13px;font-weight:700;color:' + INK + ';">' + esc(e.species) + '</div><div style="font-size:11px;color:' + INK_DIM + ';margin-top:1px;">' + e.count + ' @ $' + e.price.toFixed(2) + ' = $' + (e.count * e.price).toFixed(2) + '</div></div>' +
+          '<span onclick="removeSaleEntry(\'' + e.id + '\')" style="color:' + DANGER + ';font-size:14px;font-weight:700;padding-left:10px;cursor:pointer;">✕</span></div>';
+      }).join('');
+      var totalPieces = state.loggedThisVisit.reduce(function (n, e) { return n + e.count; }, 0);
+      var totalDollars = state.loggedThisVisit.reduce(function (n, e) { return n + e.count * e.price; }, 0);
+      entriesHtml = '<div style="padding:14px 16px 0 16px;font-size:10px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.5px;text-transform:uppercase;">Added To This Sale</div>' +
+        '<div style="padding:8px 16px 0 16px;display:flex;flex-direction:column;gap:6px;">' + rows + '</div>' +
+        '<div style="margin:8px 16px 0 16px;background:' + SURFACE_RAISED + ';border:1px solid ' + ACCENT + ';border-radius:10px;padding:9px 0;text-align:center;"><span style="font-size:13.5px;font-weight:800;color:' + ACCENT_STRONG + ';">' + totalPieces + (totalPieces === 1 ? ' piece · $' : ' pieces · $') + totalDollars.toFixed(2) + '</span></div>';
+    }
+
+    return backHeader('goMarket()', 'Sale Log', 'Log a Sale') +
+      '<div style="padding:10px 16px 0 16px;display:flex;align-items:center;justify-content:space-between;"><span style="font-size:12px;color:' + INK_DIM + ';font-weight:600;">Sale date: ' + SALE_DATE_CHOICES[state.saleDateIndex] + '</span><span onclick="cycleSaleDate()" style="font-size:12px;font-weight:700;color:' + ACCENT + ';cursor:pointer;">Change</span></div>' +
+      entriesHtml +
+      field('Species', '<div style="display:flex;flex-wrap:wrap;gap:6px;">' + cs.map(function (sp) { return tile(sp, sp === state.saleSpecies, 'pickSaleSpecies("' + sp + '")'); }).join('') + '</div>', '16px') +
+      '<div style="padding:14px 16px 0 16px;display:flex;gap:10px;">' +
+      '<div style="flex:1;"><div style="font-size:10px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px;">Price Each</div><input type="text" inputmode="decimal" id="priceInput" value="' + esc(state.priceDraft) + '" oninput="onPriceInput(this.value)" placeholder="0.00" style="width:100%;box-sizing:border-box;background:' + SURFACE_RAISED + ';border:1px solid ' + ACCENT + ';border-radius:10px;padding:14px;color:' + INK + ';font-size:18px;font-weight:700;font-family:inherit;" /></div>' +
+      '<div style="flex:1;"><div style="font-size:10px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px;">Count</div><input type="text" inputmode="numeric" id="countInput" value="' + esc(state.countDraft) + '" oninput="onCountInput(this.value)" placeholder="0" style="width:100%;box-sizing:border-box;background:' + SURFACE_RAISED + ';border:1px solid ' + ACCENT + ';border-radius:10px;padding:14px;color:' + INK + ';font-size:18px;font-weight:700;font-family:inherit;" /></div>' +
+      '</div>' +
+      '<div style="padding:14px 16px 90px 16px;"><div onclick="addSalePrice()" style="width:100%;background:' + SURFACE_RAISED + ';color:' + INK_DIM + ';border:1px solid ' + LINE + ';border-radius:12px;padding:13px 0;font-size:13.5px;font-weight:800;text-align:center;box-sizing:border-box;cursor:pointer;">Add Sale Price</div></div>';
+  }
+
+  var SCREENS = {
+    sets: screenSets, newSet: screenNewSet, setDetail: screenSetDetail, logCatch: screenLogCatch,
+    line: screenLine, reports: screenReports, reportPreview: screenReportPreview,
+    market: screenMarket, salePreview: screenSalePreview, logSale: screenLogSale
+  };
+
+  function navTabFor(view) {
+    if (view === 'newSet' || view === 'logCatch' || view === 'sets' || view === 'setDetail') return 'sets';
+    if (view === 'logSale' || view === 'market' || view === 'salePreview') return 'market';
+    if (view === 'reportPreview') return 'reports';
+    return view;
+  }
+
+  function renderNav() {
+    var tab = navTabFor(state.view);
+    var items = [
+      { key: 'sets', icon: '☰', label: 'Sets', fn: 'goSets()' },
+      { key: 'line', icon: '⤷', label: 'Line', fn: 'goLine()' },
+      { key: 'reports', icon: '▤', label: 'Reports', fn: 'goReports()' },
+      { key: 'market', icon: '$', label: 'Market', fn: 'goMarket()' }
+    ];
+    return items.map(function (it) {
+      var active = it.key === tab;
+      var color = active ? ACCENT : INK_FAINT;
+      var labelStyle = active ? ('font-size:9px;color:' + ACCENT + ';font-weight:700;') : ('font-size:9px;color:' + INK_FAINT + ';font-weight:500;');
+      return '<div onclick="' + it.fn + '" style="display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;"><span style="font-size:16px;color:' + color + ';line-height:1;' + (it.key === 'market' ? 'font-weight:700;' : '') + '">' + it.icon + '</span><span style="' + labelStyle + '">' + it.label + '</span></div>';
+    }).join('');
+  }
+
+  function render() {
+    var fn = SCREENS[state.view] || screenSets;
+    document.getElementById('phoneContent').innerHTML = fn();
+    document.getElementById('bottomNav').innerHTML = renderNav();
+  }
+
+  // ---------- Actions (global, called from inline handlers) ----------
+
+  window.goSets = function () { state.view = 'sets'; render(); };
+  window.goSetDetail = function () { state.view = 'setDetail'; render(); };
+  window.goLine = function () { state.view = 'line'; render(); };
+  window.goReports = function () { state.view = 'reports'; render(); };
+  window.goReportPreview = function () { state.view = 'reportPreview'; render(); };
+  window.goMarket = function () { state.view = 'market'; render(); };
+  window.goSalePreview = function () { state.view = 'salePreview'; render(); };
+  window.goNewSet = function () { state.newSetDraft = { setType: null, trapType: null, bait: null, lures: [], urine: null }; state.view = 'newSet'; render(); };
+  window.goLogSale = function () {
+    var cs = caughtSpecies();
+    state.view = 'logSale'; state.saleSpecies = cs[0] || null; state.priceDraft = ''; state.countDraft = '';
+    render();
+  };
+  window.goLogCatchFromDetail = function () {
+    state.view = 'logCatch'; state.catchSpecies = null; state.catchSex = null; state.catchPhoto = false; state.refreshOpen = false; state.dateIndex = 0;
+    render();
+  };
+
+  window.selectSet = function (id) { state.activeSetId = id; state.view = 'setDetail'; render(); };
+  window.selectLine = function (id) { state.activeLineId = id; state.view = 'sets'; render(); };
+
+  window.pickDraft = function (field, value) {
+    var d = state.newSetDraft;
+    d[field] = d[field] === value ? null : value;
+    render();
+  };
+  window.toggleDraftLure = function (value) {
+    var lures = state.newSetDraft.lures;
+    var i = lures.indexOf(value);
+    if (i === -1) lures.push(value); else lures.splice(i, 1);
+    render();
+  };
+  window.createSet = function () {
+    var d = state.newSetDraft;
+    state.sets.push({ id: 's' + Date.now(), name: 'Set ' + state.nextSetNum, setType: d.setType, trapType: d.trapType, bait: d.bait, lures: d.lures, urine: d.urine, catches: [], pulled: false, createdLabel: 'Today' });
+    state.nextSetNum += 1;
+    state.view = 'sets';
+    render();
+  };
+
+  window.pickDetail = function (field, value) {
+    var as = activeSet();
+    var patch = {}; patch[field] = as[field] === value ? null : value;
+    patchActiveSet(patch);
+    render();
+  };
+  window.toggleDetailLure = function (value) {
+    var as = activeSet();
+    var lures = as.lures.slice();
+    var i = lures.indexOf(value);
+    if (i === -1) lures.push(value); else lures.splice(i, 1);
+    patchActiveSet({ lures: lures });
+    render();
+  };
+  window.togglePull = function () { var as = activeSet(); patchActiveSet({ pulled: !as.pulled }); render(); };
+
+  window.pickCatchSpecies = function (v) { state.catchSpecies = v === state.catchSpecies ? null : v; render(); };
+  window.pickCatchSex = function (v) { state.catchSex = v === state.catchSex ? null : v; render(); };
+  window.togglePhoto = function () { state.catchPhoto = !state.catchPhoto; render(); };
+  window.toggleRefresh = function () { state.refreshOpen = !state.refreshOpen; render(); };
+  window.cycleDate = function () { state.dateIndex = (state.dateIndex + 1) % DATE_CHOICES.length; render(); };
+  window.saveCatch = function () {
+    var as = activeSet();
+    as.catches.push({ species: state.catchSpecies, sex: state.catchSex });
+    state.view = 'setDetail'; state.catchSpecies = null; state.catchSex = null; state.catchPhoto = false; state.refreshOpen = false; state.dateIndex = 0;
+    render();
+  };
+
+  window.startNewLine = function () { state.lineAdding = true; render(); };
+  window.cancelNewLine = function () { state.lineAdding = false; render(); };
+  window.createLine = function (name) {
+    var id = 'l' + Date.now();
+    state.trapLines.push({ id: id, name: name });
+    state.activeLineId = id; state.lineAdding = false;
+    render();
+  };
+
+  window.pickSaleSpecies = function (v) { state.saleSpecies = v === state.saleSpecies ? null : v; render(); };
+  window.cycleSaleDate = function () { state.saleDateIndex = (state.saleDateIndex + 1) % SALE_DATE_CHOICES.length; render(); };
+  window.onPriceInput = function (v) { state.priceDraft = v; };
+  window.onCountInput = function (v) { state.countDraft = v; };
+  window.addSalePrice = function () {
+    var price = parseFloat(state.priceDraft);
+    var count = parseInt(state.countDraft, 10);
+    if (!state.saleSpecies || !isFinite(price) || price <= 0 || !Number.isInteger(count) || count <= 0) return;
+    var entry = { id: 'e' + Date.now(), species: state.saleSpecies, price: price, count: count };
+    state.salesLog.push(entry);
+    state.loggedThisVisit.push(entry);
+    state.priceDraft = ''; state.countDraft = '';
+    render();
+  };
+  window.removeSaleEntry = function (id) {
+    state.loggedThisVisit = state.loggedThisVisit.filter(function (e) { return e.id !== id; });
+    render();
+  };
+
+  render();
+})();
+</script>
+</body>
+</html>
