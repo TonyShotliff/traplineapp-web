@@ -229,11 +229,11 @@
   function screenNewSet() {
     var d = state.newSetDraft;
     return backHeader('goSets()', 'New Set', 'Set ' + state.nextSetNum) +
-      field('Set Type', tilesRow(SET_TYPES, d.setType, 'pickDraft("setType",')) +
-      field('Trap Type', tilesRow(TRAP_TYPES, d.trapType, 'pickDraft("trapType",')) +
-      field('Bait', tilesRow(BAITS, d.bait, 'pickDraft("bait",')) +
+      field('Set Type', tilesRow(SET_TYPES, d.setType, "pickDraft('setType',")) +
+      field('Trap Type', tilesRow(TRAP_TYPES, d.trapType, "pickDraft('trapType',")) +
+      field('Bait', tilesRow(BAITS, d.bait, "pickDraft('bait',")) +
       field('Lure — tap all that apply', toggleTilesRow(LURES, d.lures, 'toggleDraftLure(')) +
-      field('Urine', tilesRow(URINES, d.urine, 'pickDraft("urine",')) +
+      field('Urine', tilesRow(URINES, d.urine, "pickDraft('urine',")) +
       '<div style="padding:12px 16px 0 16px;font-size:9.5px;color:' + INK_FAINT + ';line-height:13px;">Notice nothing here is required — tap Create Set any time, with as little or as much filled in as you want.</div>' +
       '<div style="padding:14px 16px 90px 16px;"><div onclick="createSet()" style="width:100%;background:' + ACCENT + ';color:#1a0d05;border-radius:14px;padding:14px 0;font-size:14.5px;font-weight:800;text-align:center;box-sizing:border-box;cursor:pointer;">Create Set</div></div>';
   }
@@ -261,11 +261,11 @@
     return backHeader('goSets()', eyebrow, as.name) +
       '<div style="margin:8px 16px 0 16px;background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:12px;padding:12px 13px;"><div style="font-size:12.5px;color:' + INK_DIM + ';">📍 Location Pending — will fill in automatically</div><div style="font-size:11px;color:' + INK_FAINT + ';margin-top:6px;">' + esc(meta) + '</div>' +
       (as.pulled ? '<div style="font-size:9.5px;font-weight:800;color:' + INK_FAINT + ';letter-spacing:0.6px;margin-top:6px;">PULLED</div>' : '') + '</div>' +
-      field('Set Type — Most-Used First', tilesRow(SET_TYPES, as.setType, 'pickDetail("setType",'), '14px') +
-      field('Trap Type — Most-Used First', tilesRow(TRAP_TYPES, as.trapType, 'pickDetail("trapType",')) +
-      field('Bait — Most-Used First', tilesRow(BAITS, as.bait, 'pickDetail("bait",')) +
+      field('Set Type — Most-Used First', tilesRow(SET_TYPES, as.setType, "pickDetail('setType',"), '14px') +
+      field('Trap Type — Most-Used First', tilesRow(TRAP_TYPES, as.trapType, "pickDetail('trapType',")) +
+      field('Bait — Most-Used First', tilesRow(BAITS, as.bait, "pickDetail('bait',")) +
       field('Lure — Most-Used First', toggleTilesRow(LURES, as.lures, 'toggleDetailLure(')) +
-      field('Urine — Most-Used First', tilesRow(URINES, as.urine, 'pickDetail("urine",')) +
+      field('Urine — Most-Used First', tilesRow(URINES, as.urine, "pickDetail('urine',")) +
       '<div style="padding:14px 16px 0 16px;font-size:10.5px;font-weight:700;color:' + ACCENT + ';letter-spacing:0.5px;text-transform:uppercase;">Catches</div>' +
       '<div style="padding:8px 16px 0 16px;display:flex;flex-direction:column;gap:6px;">' + catchesHtml + '</div>' +
       '<div style="padding:16px 16px 90px 16px;display:flex;gap:10px;">' +
@@ -284,14 +284,14 @@
     var refreshHtml = '';
     if (state.refreshOpen && as) {
       refreshHtml = '<div style="padding:6px 16px 0 16px;font-size:10.5px;color:' + INK_FAINT + ';line-height:15px;">Changes apply going forward only — this catch keeps what was actually used.</div>' +
-        field('Bait', tilesRow(BAITS, as.bait, 'pickDetail("bait",')) +
+        field('Bait', tilesRow(BAITS, as.bait, "pickDetail('bait',")) +
         field('Lure', toggleTilesRow(LURES, as.lures, 'toggleDetailLure(')) +
-        field('Urine', tilesRow(URINES, as.urine, 'pickDetail("urine",')) +
-        field('Trap Type', tilesRow(TRAP_TYPES, as.trapType, 'pickDetail("trapType",'));
+        field('Urine', tilesRow(URINES, as.urine, "pickDetail('urine',")) +
+        field('Trap Type', tilesRow(TRAP_TYPES, as.trapType, "pickDetail('trapType',"));
     }
     return backHeader('goSetDetail()', gear, 'Log Catch') +
-      field('Species — Most-Caught First', '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;">' + SPECIES.map(function (sp) { return tile(sp, sp === state.catchSpecies, 'pickCatchSpecies("' + sp + '")'); }).join('') + '</div>') +
-      field('Sex', '<div style="display:flex;gap:6px;">' + ['Male', 'Female'].map(function (v) { return tile(v, v === state.catchSex, 'pickCatchSex("' + v + '")'); }).join('') + '</div>') +
+      field('Species — Most-Caught First', '<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;">' + SPECIES.map(function (sp) { return tile(sp, sp === state.catchSpecies, "pickCatchSpecies('" + sp + "')"); }).join('') + '</div>') +
+      field('Sex', '<div style="display:flex;gap:6px;">' + ['Male', 'Female'].map(function (v) { return tile(v, v === state.catchSex, "pickCatchSex('" + v + "')"); }).join('') + '</div>') +
       '<div style="padding:12px 16px 0 16px;"><div onclick="togglePhoto()" style="' + photoStyle + '">' + photoLabel + '</div></div>' +
       field('Notes', '<div style="margin-top:8px;background:' + CARD + ';border:1px solid ' + LINE + ';border-radius:10px;padding:12px;min-height:40px;"><span style="font-size:12px;color:' + INK_FAINT + ';font-style:italic;">Anything worth remembering?</span></div>') +
       '<div onclick="toggleRefresh()" style="padding:14px 16px 0 16px;font-size:13px;font-weight:700;color:' + INK_DIM + ';cursor:pointer;">' + (state.refreshOpen ? '− ' : '+ ') + 'Refresh bait / lure / urine?</div>' +
@@ -314,7 +314,7 @@
     if (state.lineAdding) {
       var choices = LINE_NAME_CHOICES.filter(function (n) { return !state.trapLines.some(function (l) { return l.name === n; }); });
       bottom = '<div style="padding:16px 16px 0 16px;font-size:10px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.5px;text-transform:uppercase;">Name Your Line</div>' +
-        '<div style="padding:8px 16px 0 16px;display:flex;flex-wrap:wrap;gap:6px;">' + choices.map(function (name) { return tile(name, false, 'createLine("' + name + '")'); }).join('') + '</div>' +
+        '<div style="padding:8px 16px 0 16px;display:flex;flex-wrap:wrap;gap:6px;">' + choices.map(function (name) { return tile(name, false, "createLine('" + name + "')"); }).join('') + '</div>' +
         '<div style="padding:10px 16px 90px 16px;text-align:center;"><span onclick="cancelNewLine()" style="font-size:12px;color:' + INK_FAINT + ';cursor:pointer;">Cancel</span></div>';
     } else {
       bottom = '<div style="padding:16px 16px 90px 16px;"><div onclick="startNewLine()" style="border:1.5px dashed ' + LINE_STRONG + ';border-radius:12px;padding:14px;text-align:center;cursor:pointer;"><span style="font-size:13.5px;font-weight:700;color:' + INK_DIM + ';">+ New Trap Line</span></div></div>';
@@ -475,7 +475,7 @@
     return backHeader('goMarket()', 'Sale Log', 'Log a Sale') +
       '<div style="padding:10px 16px 0 16px;display:flex;align-items:center;justify-content:space-between;"><span style="font-size:12px;color:' + INK_DIM + ';font-weight:600;">Sale date: ' + SALE_DATE_CHOICES[state.saleDateIndex] + '</span><span onclick="cycleSaleDate()" style="font-size:12px;font-weight:700;color:' + ACCENT + ';cursor:pointer;">Change</span></div>' +
       entriesHtml +
-      field('Species', '<div style="display:flex;flex-wrap:wrap;gap:6px;">' + cs.map(function (sp) { return tile(sp, sp === state.saleSpecies, 'pickSaleSpecies("' + sp + '")'); }).join('') + '</div>', '16px') +
+      field('Species', '<div style="display:flex;flex-wrap:wrap;gap:6px;">' + cs.map(function (sp) { return tile(sp, sp === state.saleSpecies, "pickSaleSpecies('" + sp + "')"); }).join('') + '</div>', '16px') +
       '<div style="padding:14px 16px 0 16px;display:flex;gap:10px;">' +
       '<div style="flex:1;"><div style="font-size:10px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px;">Price Each</div><input type="text" inputmode="decimal" id="priceInput" value="' + esc(state.priceDraft) + '" oninput="onPriceInput(this.value)" placeholder="0.00" style="width:100%;box-sizing:border-box;background:' + SURFACE_RAISED + ';border:1px solid ' + ACCENT + ';border-radius:10px;padding:14px;color:' + INK + ';font-size:18px;font-weight:700;font-family:inherit;" /></div>' +
       '<div style="flex:1;"><div style="font-size:10px;font-weight:700;color:' + INK_FAINT + ';letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px;">Count</div><input type="text" inputmode="numeric" id="countInput" value="' + esc(state.countDraft) + '" oninput="onCountInput(this.value)" placeholder="0" style="width:100%;box-sizing:border-box;background:' + SURFACE_RAISED + ';border:1px solid ' + ACCENT + ';border-radius:10px;padding:14px;color:' + INK + ';font-size:18px;font-weight:700;font-family:inherit;" /></div>' +
